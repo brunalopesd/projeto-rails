@@ -1,0 +1,43 @@
+
+    <%= form_for Filme.new do |form|%>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <%= form.label :titulo %>
+                <%= form.text_field :titulo, class:"form-control" %>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <%= form.label :atorprincipal %>
+                <%= form.text_field :atorprincipal, class:"form-control"%>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-2">
+            <div class="form-group">
+                <%= form.label :nota %>
+                <%= form.number_field :nota, step:0.01, class:"form-control"%>
+            </div>
+        </div>
+    </div>
+
+        <div class="row">
+        <div class="col-sm-2">
+            <div class="form-group">
+                <%= form.label :ano %>
+                <%= form.number_field :ano,  class:"form-control"%>
+            </div>
+        </div>
+    </div>
+
+        <%= form.submit "Salvar", class:"btn btn-primary" %>
+
+    <% end %>

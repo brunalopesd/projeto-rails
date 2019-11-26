@@ -1,4 +1,8 @@
-
+<% if flash[:notice]%>
+    <div class="alert alert-success" role="alert">
+        <%= flash[:notice] %>
+    </div>
+<%end%>
 <table class="table table-bordered table-hover">
     <thead>
         <tr>
@@ -6,19 +10,12 @@
             <td>Ator principal</td>
             <td>Nota</td>
             <td>Ano</td>
-            <td colspan="1">
+            <td>Genero </td>
+            <td colspan="2">
         </tr>
     </thead>
     <tbody>
-    <%@filmes.each do |filme|%>
-        <tr>
-            <td><%= filme.titulo %></td>
-            <td><%= filme.atorprincipal %></td>
-            <td><%= filme.nota %></td>
-            <td><%= filme.ano %></td>
-            <td><%= button_to "Remover", filme, method: :delete, class:"btn btn-danger", data: {confirm: "Tem certeza que deseja deletar o filme #{filme.titulo}?"} %></td>
-        </tr>
-        <%end%>
+        <%= render @filmes %>
     </tbody>
 </table>
 <div class="alert alert-success" role="alert">
@@ -31,16 +28,11 @@
             <td>Ator principal</td>
             <td>Nota</td>
             <td>Ano</td>
+            <td>Genero </td>
+            <td colspan="2">
         </tr>
     </thead>
     <tbody>
-    <%@filmes_com_maior_nota.each do |filme|%>
-        <tr>
-            <td><%= filme.titulo %></td>
-            <td><%= filme.atorprincipal %></td>
-            <td><%= filme.nota %></td>
-            <td><%= filme.ano %></td>
-        </tr>
-        <%end%>
+        <%= render @filmes_com_maior_nota %>
     </tbody>
 </table>

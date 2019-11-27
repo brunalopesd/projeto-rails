@@ -33,7 +33,7 @@ class FilmesController < ApplicationController
     end
 
     def update 
-        if @produto.update filme_params
+        if @filme.update filme_params
             flash[:notice] = "Filme atualizado com sucesso!"
             redirect_to root_url
         else

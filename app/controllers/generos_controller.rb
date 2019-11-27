@@ -10,6 +10,7 @@ class GenerosController < ApplicationController
   # GET /generos/1
   # GET /generos/1.json
   def show
+    @filmes_por_genero = Filme.where("genero_id = ?", params[:id])
   end
 
   # GET /generos/new
@@ -28,7 +29,7 @@ class GenerosController < ApplicationController
 
     respond_to do |format|
       if @genero.save
-        format.html { redirect_to @genero, notice: 'Genero was successfully created.' }
+        format.html { redirect_to @genero, notice: 'Gênero criado com sucesso.' }
         format.json { render :show, status: :created, location: @genero }
       else
         format.html { render :new }
@@ -42,7 +43,7 @@ class GenerosController < ApplicationController
   def update
     respond_to do |format|
       if @genero.update(genero_params)
-        format.html { redirect_to @genero, notice: 'Genero was successfully updated.' }
+        format.html { redirect_to @genero, notice: 'Gênero Atualizado.' }
         format.json { render :show, status: :ok, location: @genero }
       else
         format.html { render :edit }

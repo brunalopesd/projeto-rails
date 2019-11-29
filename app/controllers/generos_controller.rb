@@ -26,10 +26,9 @@ class GenerosController < ApplicationController
   # POST /generos.json
   def create
     @genero = Genero.new(genero_params)
-
     respond_to do |format|
       if @genero.save
-        format.html { redirect_to @genero, notice: 'Gênero criado com sucesso.' }
+        format.html { redirect_to generos_url, notice: 'Gênero criado com sucesso.' }
         format.json { render :show, status: :created, location: @genero }
       else
         format.html { render :new }

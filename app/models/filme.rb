@@ -1,5 +1,6 @@
 class Filme < ApplicationRecord
-    
+
+
     belongs_to :genero, optional: true
     
     validates :titulo, presence: true

@@ -1,3 +1,3 @@
 class Genero < ApplicationRecord
-    attr_acessors :nome
+    validates :nome, length: {minimum:4}
 end

@@ -1,11 +1,14 @@
 class FilmesController < ApplicationController
+
+    attr_accessor :status
+
     
     before_action :set_filme, only: [:edit, :update, :destroy]
     
     def index 
         @filmes = Filme.order :nota
-        @filmes_com_maior_nota = Filme.order(nota: :desc).limit 2
-    end
+        @filmes_assistidos = Filme.order(:status).limit 3
+    end 
 
     def new
         @filme = Filme.new
@@ -46,16 +49,15 @@ class FilmesController < ApplicationController
         @filmes = Filme.where "titulo like ?", "%#{@titulo}%"
     end
 
-    
 
     private
 
     def filme_params
         params.require(:filme).permit(:titulo,
-        :atorprincipal, :nota, :ano, :genero_id)
+        :atorprincipal, :nota, :ano, :genero_id, :status)
     
     end
-
+    
     def set_filme
         @filme = Filme.find(params[:id])
     end

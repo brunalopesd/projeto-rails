@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Catalogo De Filmes</title>
+    <title>The movies list</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,7 +11,7 @@
 
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <%= nav_bar brand: "Filmes", brand_link: root_url do %>
+      <%= nav_bar brand: "Filmes", brand_link: root_url do %>
         <%= menu_group do %>
         <%= menu_item "Adicionar um novo filme", new_filme_path %>
         <%= menu_item "Genêros", generos_path %>
@@ -22,7 +22,7 @@
         <%= button_to "Buscar", nil, class: "btn btn-default"%>    
       </div>
       <%end%>
-      <%end%>
+    <%end%>
   </nav>
     <div class="container">
       <%= yield %>

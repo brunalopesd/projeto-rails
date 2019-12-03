@@ -56,7 +56,7 @@ class GenerosController < ApplicationController
   def destroy
     @genero.destroy
     respond_to do |format|
-      format.html { redirect_to generos_url, notice: 'Genero was successfully destroyed.' }
+      format.html { redirect_to generos_url, notice: 'Gênero deletedado com sucesso.' }
       format.json { head :no_content }
     end
   end

@@ -5,6 +5,7 @@
     <td><%= filme.nota %></td>
     <td><%= filme.ano %></td>
     <td><%= filme.genero.nome unless filme.genero.nil? %></td>
+    <td><%= filme.status %></td>
     <td><%= link_to "Editar", edit_filme_path(filme), class: "btn btn-default" %> </td>
     <td><%= button_to "Deletar", filme, method: :delete, class:"btn btn-danger", data: {confirm: "Tem certeza que deseja deletar o filme #{filme.titulo}?"} %></td>
 </tr>

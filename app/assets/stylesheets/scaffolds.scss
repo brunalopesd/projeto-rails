@@ -1,27 +1,19 @@
-body {
-  background-color:rgb(255, 255, 255);
-  color: #333;
-  margin: 33px; }
 
-body, p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px; }
 
 pre {
-  background-color: #eee;
+  background-color:black;
   padding: 10px;
   font-size: 11px; }
 
 a {
-  color:black; }
+  color: #f2f2f2; }
 
 a:visited {
-  color: black; }
+  color:black; }
 
 a:hover {
   color: #fff;
-  background-color: black; }
+  background-color: rgb(192, 26, 26); }
 
 th {
   padding-bottom: 5px; }
@@ -34,7 +26,12 @@ div.actions {
   margin-bottom: 10px; }
 
 #notice {
-  color: LightCyan; }
+  color:green;
+  font-size:16px;
+  width: 300px;
+  height: 50px;
+  text-align:center;
+ }
 
 .field_with_errors {
   padding: 2px;
@@ -63,3 +60,14 @@ div.actions {
 
 label {
   display:auto; }
+
+
+.navbar{
+  background-color: black;
+  font-size: 18px;
+  text-align:left;}
+
+.navbar-brand{
+  font-size: 24px;
+  text-align:left;
+}

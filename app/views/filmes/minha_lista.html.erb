@@ -1,0 +1,29 @@
+
+<div class="box2">
+    <h3>Minha Lista<h3><p>
+</div>
+
+<table class="table table-bordered table-dark">
+    <thead>
+        <tr>
+            <td><h3>Título</h3></td>
+            <td><h3 >Ator Principal</h3></td>
+            <td><h3>Ano</h3></td>
+            <td><h3>Gênero</h3></td>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @filme.each do |filme| %>
+        <%if (filme.status == "quero_ver")%>
+            <tr>
+                <td><%= filme.titulo %></td>
+                <td><%= filme.atorprincipal %></td>
+                <td><%= filme.ano %></td>
+                <td><%= filme.genero.nome unless filme.genero.nil? %></td>
+            </tr>
+        
+        <%end%>
+        <%end%>
+    </tbody>
+</table>

@@ -7,7 +7,7 @@ class FilmesController < ApplicationController
     
     def index 
         @filmes = Filme.order :nota
-        @filmes_assistidos = Filme.order(:status).limit 3
+         
     end 
 
     def new
@@ -29,11 +29,11 @@ class FilmesController < ApplicationController
             renderiza :new
         end
     end
-
+    
     def destroy
         @filme.destroy
         redirect_to root_url
-    end
+    end 
 
     def update 
         if @filme.update filme_params
@@ -48,6 +48,12 @@ class FilmesController < ApplicationController
         @titulo = params[:titulo]
         @filmes = Filme.where "titulo like ?", "%#{@titulo}%"
     end
+
+
+    def minha_lista
+        @status = params[:status]
+        @filme = Filme.where (status == "quero_ver")
+    end 
 
 
     private
@@ -66,4 +72,5 @@ class FilmesController < ApplicationController
         @generos = Genero.all
         render view
     end
+
 end

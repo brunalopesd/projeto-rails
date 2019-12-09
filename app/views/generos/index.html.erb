@@ -1,27 +1,29 @@
 <p id="notice"><%= notice %></p>
+<div class="box2">
+    <h3>Gêneros<h3><p>
+</div>
 
-<h2 style="font-size:200%; font-family:verdana; color:DarkSlateGrey;">Gêneros</h2>
-
-<table class="table table-bordered table-over"; style="background-color:LightGray;">
-  <thead>
-    <tr>
-      <th><h3 style="font-size:150%; font-family:verdana;">Nome</h3></th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @generos.each do |genero| %>
+<div class = "box1">
+  <table class="table table-bordered table-dark">
+    <thead>
       <tr>
-        <td><%= genero.nome %></td>
-        <td><%= link_to 'Ver Filmes', genero, class: "btn btn-default" %></td>
-        <td><%= link_to 'Alterar', edit_genero_path(genero), class: "btn btn-default" %></td>
-        <td><%= link_to 'Deletar', genero, method: :delete, data: { confirm: 'Tem certeza que deseja deletar?' }, class: "btn btn-default" %></td>
+        <th><h3 style="font-size:200%; font-family:verdana; color:#f2f2f2;">Nome</h3></th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
+    <tbody>
+      <% @generos.each do |genero| %>
+        <tr>
+          <td><%= genero.nome %></td>
+          <td><%= link_to 'Ver Filmes', genero, class: "btn btn-default" %></td>
+          <td><%= link_to 'Alterar', edit_genero_path(genero), class: "btn btn-default" %></td>
+          <td><%= link_to 'Deletar', genero, method: :delete, data: { confirm: 'Tem certeza que deseja deletar?' }, class: "btn btn-default" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  </div>
 <br>
 
-<%= link_to 'Adicionar novo Genero', new_genero_path, class: "btn btn-default" %>
+<%= link_to 'Adicionar novo Genero', new_genero_path, class: "btn btn-default", style:"background-color: #d9d9d9" %>

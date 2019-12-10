@@ -10,6 +10,8 @@
             <td><h3 >Ator Principal</h3></td>
             <td><h3>Ano</h3></td>
             <td><h3>Gênero</h3></td>
+            <td colspan="2">
+           
         </tr>
     </thead>
 
@@ -21,6 +23,8 @@
                 <td><%= filme.atorprincipal %></td>
                 <td><%= filme.ano %></td>
                 <td><%= filme.genero.nome unless filme.genero.nil? %></td>
+                <td><%= link_to "Editar", edit_filme_path(filme), class: "btn btn-default" %> </td>
+            
             </tr>
         
         <%end%>

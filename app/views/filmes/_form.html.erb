@@ -45,13 +45,13 @@
             <%= form.label :status %>
             <div class="form-check">
                 <%= form.radio_button(:status, "assisti", class: "form-check-input") %>
-                <%= label_tag(:status_assistido, "Já assisti", class: "form-check-label") %>
+                <%= label_tag(:status_assistido, "Já assisti", class: "form-check-label") %><p>
                 <%= form.radio_button(:status, "quero_ver", class: "form-check-input") %>
-                <%= label_tag(:status_minha_lista, "Adicionar à minha lista", class: "form-check-label") %><p>
+                <%= label_tag(:status_minha_lista, "Quero Ver", class: "form-check-label") %><p>
             </div>
         </div>
     </div>
 
-        <%= form.submit texto_da_acao, class:"btn btn-primary", style:"background-color:#404040"  %>
+        <%= form.submit texto_da_acao, class:"btn btn-primary"%>
 
     <% end %>

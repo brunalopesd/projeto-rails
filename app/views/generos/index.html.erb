@@ -17,8 +17,8 @@
         <tr>
           <td><%= genero.nome %></td>
           <td><%= link_to 'Ver Filmes', genero, class: "btn btn-default" %></td>
-          <td><%= link_to 'Alterar', edit_genero_path(genero), class: "btn btn-default" %></td>
-          <td><%= link_to 'Deletar', genero, method: :delete, data: { confirm: 'Tem certeza que deseja deletar?' }, class: "btn btn-default" %></td>
+          <td><%= link_to 'Editar', edit_genero_path(genero), class: "btn btn-default" %></td>
+          <td><%= link_to 'Deletar', genero, method: :delete, data: { confirm: 'Tem certeza que deseja deletar?' }, class: "btn btn-danger" %></td>
         </tr>
       <% end %>
     </tbody>

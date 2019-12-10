@@ -2,7 +2,7 @@ class Filme < ApplicationRecord
 
 
     belongs_to :genero, optional: true
-    validates :titulo, :genero, :status, presence: true
+    validates :titulo, :genero, presence: true
     validates :atorprincipal, length: {minimum:4}
 
     def status_message
